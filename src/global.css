@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&display=swap");
+
+@font-face {
+  font-family: Kingstone;
+  src: url(./assets/kingstone-font/KingstoneDemoRegular-G3n5G.ttf);
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  --primary-color: #ffffff;
+  --secundary-color: #777777;
+
+  --primary-black: #1a1a1a;
+  --secundary-black: #000000;
+  --terciary-black: #161616;
+
+  --primary-golden: #daa520;
+  --secundary-golden: #b8860b;
+  --terciary-golden: #ffd700;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.logo {
+    color: var(--primary-golden);
+    font-family: Kingstone;
+    font-size: 3rem;
+    margin-left: 20px;
+}

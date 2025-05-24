@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid var(--secundary-black);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgb(165, 140, 0); /* Sombra dourada sem deslocamento (offset), com bastante blur */
+}
+
+.title {
+    text-align: center;
+    width: 500px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: Cinzel;
+}
+
+.content {
+    width: 300px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
