@@ -1,57 +1,68 @@
 .header {
-    background-color: var(--secundary-black);
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: var(--secundary-black);
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-right: 30px;
 }
 
 .nav_links {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 100;
-    font-size: 1.1rem;
-    display: inline-block;
-    position: relative;
-    transition: color 0.25s ease-in-out;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 100;
+  font-size: 1.1rem;
+  display: inline-block;
+  position: relative;
+  transition: color 0.25s ease-in-out;
 }
 
 .nav_links:hover {
-    color: var(--secundary-color);
+  color: var(--secundary-color);
 }
 
 .nav_links::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--secundary-golden);
-    transform-origin: bottom;
-    transition: transform 0.25s ease-out;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secundary-golden);
+  transform-origin: bottom;
+  transition: transform 0.25s ease-out;
 }
 
 .nav_links:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom;
+  transform: scaleX(1);
+  transform-origin: bottom;
 }
 
 .user {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    transition: all 0.25s ease-in-out;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: all 0.25s ease-in-out;
 }
 
 .user:hover {
-    color: var(--primary-golden);
+  color: var(--primary-golden);
+}
+
+.logout {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: var(--primary-golden);
 }

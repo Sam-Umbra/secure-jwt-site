@@ -29,7 +29,7 @@ export default function Login() {
     <div className={style.container}>
       <form className={style.form} action={handleLogin}>
         <div className={style.header}>
-          <h1 className="logo">Umbra</h1>
+          <h1><a href="/" className="logo">Umbra</a></h1>
           <h2>Seja Bem-Vindo!</h2>
         </div>
         <div className={style.content}>

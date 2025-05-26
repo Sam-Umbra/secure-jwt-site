@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Login from "./components/security/Login";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/security/PrivateRoute";
+import NotFound from "./components/error/NotFound";
 
 export default function WebRoutes() {
   return (
@@ -13,7 +14,7 @@ export default function WebRoutes() {
           <Route element={<Dashboard />} path="/dashboard" />
         </Route>
         <Route element={<Login />} path="/login" />
-        <Route element={<h1>404</h1>} path="*" />
+        <Route element={<NotFound />} path="*" />
       </Routes>
     </BrowserRouter>
   );
