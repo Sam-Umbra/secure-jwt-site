@@ -1,11 +1,14 @@
-import style from "./Login.module.css";
 import api from "../connection/Api";
+import { useAuth } from "../provider/AuthProvider";
+import style from "./Login.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = (location.state as any)?.from?.pathname || '/';
+  const from = (location.state as any)?.from?.pathname || "/";
+  const { login } = useAuth();
+  
 
   async function handleLogin(formData: FormData) {
     const email = formData.get("email");
@@ -18,8 +21,8 @@ export default function Login() {
       });
 
       const accessToken = response.data.accessToken;
-      localStorage.setItem("token", accessToken);
-      navigate(from, {replace: true});
+      login(accessToken);
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Erro ao fazer login:", error);
     }
@@ -29,7 +32,11 @@ export default function Login() {
     <div className={style.container}>
       <form className={style.form} action={handleLogin}>
         <div className={style.header}>
-          <h1><a href="/" className="logo">Umbra</a></h1>
+          <h1>
+            <a href="/" className="logo">
+              Umbra
+            </a>
+          </h1>
           <h2>Seja Bem-Vindo!</h2>
         </div>
         <div className={style.content}>

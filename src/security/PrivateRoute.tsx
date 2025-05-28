@@ -1,15 +1,16 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import api from "../connection/Api";
+import { useAuth } from "../provider/AuthProvider";
 
 export default function PrivateRoute() {
   const location = useLocation();
-  const token = localStorage.getItem("token");
+  const { isAuthenticated, loading } = useAuth();
 
-  if (token) {
-    api.get('/private');
+  if (loading) {
+    return <h1>Carregando...</h1>
   }
+  
 
-  return token ? (
+  return isAuthenticated ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />

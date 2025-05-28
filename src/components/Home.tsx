@@ -1,19 +1,11 @@
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import style from "./Home.module.css";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
-  }, []);
-
   return (
     <>
-      <Header auth={isAuthenticated} />
+      <Header />
       <main className={style.main}>
         <div className={style.container}>
           <h2 className={style.title}>

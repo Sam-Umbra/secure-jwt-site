@@ -5,16 +5,10 @@ import {
   faDoorOpen,
   faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../provider/AuthProvider";
 
-export default function Header({ auth }: { auth: boolean }) {
-  const navigate = useNavigate();
-
-  function logout() {
-    localStorage.removeItem("token");
-
-    navigate("/");
-  }
+export default function Header() {
+  const { isAuthenticated, logout } = useAuth();
 
   return (
     <header className={style.header}>
@@ -26,7 +20,7 @@ export default function Header({ auth }: { auth: boolean }) {
         <a href="/dashboard" className={style.nav_links}>
           Dashboard
         </a>
-        {auth ? (
+        {isAuthenticated ? (
           <>
             <FontAwesomeIcon icon={faCircleUser} className={style.user} />
             <FontAwesomeIcon
