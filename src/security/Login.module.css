@@ -55,45 +55,57 @@
 }
 
 .field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.field_error {
+  border: 2px solid red;
+  padding: 5px;
+  font-size: 0.75rem;
+  align-self: center;
+  background-color: rgb(255, 159, 159);
+  color: red;
+  border-radius: 5px;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
 .label {
-    font-weight: 300;
-    font-size: 1rem;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 .input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid var(--secundary-black);
-    border-radius: 5px;
-    transition: all 0.25s ease-in-out;
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--secundary-black);
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
 }
 
 .input:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
-    border-color: var(--primary-golden);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
+  border-color: var(--primary-golden);
 }
 
 .button {
-    width: 100%;
-    height: 50px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--terciary-golden);
-    background-color: var(--secundary-black);
-    border: 2px solid var(--primary-golden);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.25s ease-in-out;
+  width: 100%;
+  height: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--terciary-golden);
+  background-color: var(--secundary-black);
+  border: 2px solid var(--primary-golden);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 
 .button:hover {
-    color: var(--secundary-black);
-    background-color: var(--primary-golden);
+  color: var(--secundary-black);
+  background-color: var(--primary-golden);
 }

@@ -1,4 +1,5 @@
-import api from "../connection/Api";
+import { useState } from "react";
+import api from "../connection/api";
 import { useAuth } from "../provider/AuthProvider";
 import style from "./Login.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,7 +9,7 @@ export default function Login() {
   const location = useLocation();
   const from = (location.state as any)?.from?.pathname || "/";
   const { login } = useAuth();
-  
+  const [showAlert, setShowAlert] = useState<boolean>(false);
 
   async function handleLogin(formData: FormData) {
     const email = formData.get("email");
@@ -20,11 +21,13 @@ export default function Login() {
         password,
       });
 
+      setShowAlert(false);
       const accessToken = response.data.accessToken;
       login(accessToken);
       navigate(from, { replace: true });
     } catch (error) {
       console.error("Erro ao fazer login:", error);
+      setShowAlert(true);
     }
   }
 
@@ -40,6 +43,7 @@ export default function Login() {
           <h2>Seja Bem-Vindo!</h2>
         </div>
         <div className={style.content}>
+          {showAlert && <div className={style.field_error}>Campos Inválidos</div>}
           <div className={style.field}>
             <label htmlFor="email" className={style.label}>
               Email:

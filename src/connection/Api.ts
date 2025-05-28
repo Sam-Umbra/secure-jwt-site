@@ -1,4 +1,5 @@
 import axios from "axios";
+import { triggerLogout } from "../provider/authService";
 
 const api = axios.create({ baseURL: "http://localhost:8080" });
 
@@ -17,8 +18,7 @@ api.interceptors.response.use(
       error.response.status === 401 &&
       !error.config.url.includes("/auth/login")
     ) {
-      localStorage.removeItem("token");
-      window.location.href = "/";
+      triggerLogout();
     }
 
     return Promise.reject(error);

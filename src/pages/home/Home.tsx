@@ -1,5 +1,5 @@
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
+import Footer from "../../components/layout/footer/Footer";
+import Header from "../../components/layout/header/Header";
 import style from "./Home.module.css";
 
 export default function Home() {

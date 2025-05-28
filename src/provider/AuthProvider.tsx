@@ -6,8 +6,9 @@ import {
   type ReactNode,
   useContext,
 } from "react";
-import api from "../connection/Api";
+import api from "../connection/api";
 import { useNavigate } from "react-router-dom";
+import { registerLogoutCallback } from "./authService";
 
 type AuthContextType = {
   isAuthenticated: boolean;
@@ -29,6 +30,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    registerLogoutCallback(logout);
     const storedToken = localStorage.getItem("token");
     if (!storedToken) {
       setLoading(false);
@@ -62,7 +64,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem("token");
     setRoles([]);
     setIsAuthenticated(false);
-    navigate("/");
+    setTimeout(() => {
+      navigate("/", { replace: true });
+    }, 0);
   }
 
   return (

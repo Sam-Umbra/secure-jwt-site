@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./pages/home/Home";
 import Login from "./security/Login";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import PrivateRoute from "./security/PrivateRoute";
-import NotFound from "./components/error/NotFound";
+import NotFound from "./pages/error/NotFound";
 import { AuthProvider } from "./provider/AuthProvider";
 
 export default function WebRoutes() {
